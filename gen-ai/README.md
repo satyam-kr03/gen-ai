@@ -33,6 +33,3 @@ bash
     flutter run
 
     Explore and Enjoy:
-    Once the app is successfully running, explore the features and functionalities. Customize and enhance it to meet your project goals.
-
-For more detailed information and guidance on Flutter development, refer to the official documentation. Happy coding!
