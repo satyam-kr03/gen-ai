@@ -1,10 +1,12 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:gen_ai/explore/view/currency.dart';
 import 'package:go_router/go_router.dart';
 import 'package:gen_ai/plan/plan.dart';
 import 'package:gen_ai/explore/explore.dart';
+import 'package:gen_ai/favorites/favorites.dart';
 
-const initialLocation = '/home';
+const initialLocation = '/plan';
 
 final _rootNavigatorKey = GlobalKey<NavigatorState>();
 final _shellNavigatorAKey = GlobalKey<NavigatorState>(debugLabel: 'shellA');
@@ -43,9 +45,9 @@ class ScaffoldWithNestedNavigation extends StatelessWidget {
             selectedIcon: Icon(Icons.explore),
           ),
           NavigationDestination(
-            label: 'Profile',
-            icon: Icon(Icons.person_outlined),
-            selectedIcon: Icon(Icons.person),
+            label: 'Favorites',
+            icon: Icon(Icons.favorite_outline_outlined),
+            selectedIcon: Icon(Icons.favorite),
           ),
         ],
         onDestinationSelected: _goBranch,
@@ -122,18 +124,10 @@ final router = GoRouter(
           navigatorKey: _shellNavigatorAKey,
           routes: [
             GoRoute(
-              path: '/home',
+              path: '/plan',
               pageBuilder: (context, state) => const NoTransitionPage(
                 child: PlanPage(),
               ),
-              routes: [
-                // child route
-                GoRoute(
-                  path: 'details',
-                  builder: (context, state) =>
-                  const DetailsScreen(label: 'Home'),
-                ),
-              ],
             ),
           ],
         ),
@@ -147,9 +141,60 @@ final router = GoRouter(
               ),
               routes: [
                 GoRoute(
-                  path: 'details',
-                  builder: (context, state) =>
-                  const DetailsScreen(label: 'Feed'),
+                  path: 'hotels',
+                  builder: (context, state) {
+                    Map<String, String> args =
+                    state.extra as Map<String, String>;
+                    return Hotels(location: args["location"]!);
+                  }
+                ),
+                GoRoute(
+                  path: 'dining',
+                    builder: (context, state) {
+                      Map<String, String> args =
+                      state.extra as Map<String, String>;
+                      return Dining(location: args["location"]!);
+                    }
+                ),
+                GoRoute(
+                  path: 'shopping',
+                    builder: (context, state) {
+                      Map<String, String> args =
+                      state.extra as Map<String, String>;
+                      return Shopping(location: args["location"]!);
+                    }
+                ),
+                GoRoute(
+                  path: 'local',
+                    builder: (context, state) {
+                      Map<String, String> args =
+                      state.extra as Map<String, String>;
+                      return Local(location: args["location"]!);
+                    }
+                ),
+                GoRoute(
+                  path: 'weather',
+                    builder: (context, state) {
+                      Map<String, String> args =
+                      state.extra as Map<String, String>;
+                      return Weather(location: args["location"]!);
+                    }
+                ),
+                GoRoute(
+                  path: 'translation',
+                    builder: (context, state) {
+                      Map<String, String> args =
+                      state.extra as Map<String, String>;
+                      return Translation(location: args["location"]!);
+                    }
+                ),
+                GoRoute(
+                    path: 'currency',
+                    builder: (context, state) {
+                      Map<String, String> args =
+                      state.extra as Map<String, String>;
+                      return Currency(location: args["location"]!);
+                    }
                 ),
               ],
             ),
@@ -159,18 +204,8 @@ final router = GoRouter(
           navigatorKey: _shellNavigatorCKey,
           routes: [
             GoRoute(
-              path: '/profile',
-              pageBuilder: (context, state) => const NoTransitionPage(
-                child: RootScreen(
-                  label: 'Profile', detailsPath: '/profile/details',),
-              ),
-              routes: [
-                GoRoute(
-                  path: 'details',
-                  builder: (context, state) =>
-                  const DetailsScreen(label: 'Profile'),
-                ),
-              ],
+              path: '/favorites',
+              builder: (context, state) => FavoritesPage(),
             ),
           ],
         ),
