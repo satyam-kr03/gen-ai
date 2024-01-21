@@ -7,10 +7,9 @@ Follow these steps to get the app up and running:
 
     Clone the Project:
     Clone this project to your local machine using Git:
+    git clone https://github.com/satyam-kr03/gen-ai.git
 
-    bash
 
-git clone https://github.com/satyam-kr03/gen-ai.git
 
 Navigate to Project Directory:
 Change into the project directory:
