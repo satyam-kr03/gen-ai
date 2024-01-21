@@ -7,6 +7,8 @@ Follow these steps to get the app up and running:
 
     Clone the Project:
     Clone this project to your local machine using Git:
+
+    
     git clone https://github.com/satyam-kr03/gen-ai.git
 
 
@@ -14,14 +16,11 @@ Follow these steps to get the app up and running:
 Navigate to Project Directory:
 Change into the project directory:
 
-bash
 
 cd gen-ai
 
 Install Dependencies:
 Run the following command to get the required dependencies:
-
-bash
 
 flutter pub get
 
