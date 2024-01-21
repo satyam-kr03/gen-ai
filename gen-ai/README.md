@@ -1,16 +1,39 @@
-# gen_ai
+# AI Travel Guide
 
-A new Flutter project.
+Running The App
+Follow these steps to get the app up and running:
+    Install Flutter:
+    Make sure you have Flutter installed on your machine. If not, follow the instructions in the Flutter Installation Guide.
 
-## Getting Started
+    Clone the Project:
+    Clone this project to your local machine using Git:
 
-This project is a starting point for a Flutter application.
+    bash
 
-A few resources to get you started if this is your first Flutter project:
+git clone https://github.com/satyam-kr03/gen-ai.git
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+Navigate to Project Directory:
+Change into the project directory:
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+bash
+
+cd gen-ai
+
+Install Dependencies:
+Run the following command to get the required dependencies:
+
+bash
+
+flutter pub get
+
+Run the App:
+Connect a device or start an emulator, then run the app:
+
+bash
+
+    flutter run
+
+    Explore and Enjoy:
+    Once the app is successfully running, explore the features and functionalities. Customize and enhance it to meet your project goals.
+
+For more detailed information and guidance on Flutter development, refer to the official documentation. Happy coding!
